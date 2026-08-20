@@ -10,7 +10,7 @@
 | **Client** | NorthBay Living |
 | **Roadmap Version** | 3.1 |
 | **Status** | Locked |
-| **Last Updated** | August 2026 |
+| **Last Updated** | 21 August 2026 |
 
 ---
 
@@ -46,7 +46,9 @@ The intended business users are non-technical Operations and Finance stakeholder
 
 # 2. Current Project Status
 
-Project FORESIGHT has completed its core analytical, modelling, risk-scoring, productization, and deployment stages.
+Project FORESIGHT has completed its core data engineering, analytical, forecasting, evaluation, inventory-intelligence, productization, deployment, and executive communication stages.
+
+The **core technical scope is now frozen for final submission**.
 
 ## Completed Core Work
 
@@ -64,8 +66,11 @@ Project FORESIGHT has completed its core analytical, modelling, risk-scoring, pr
 - Final inventory-risk scoring
 - Notebook PDF exports for key modelling stages
 - README documentation
-- Deployment of the Streamlit application
-- Deployment of the FastAPI scoring service
+- Streamlit deployment
+- FastAPI deployment
+- Final production forecasting configuration
+- Final model comparison and selection evidence
+- Decision-log governance updates
 
 ## Current Remaining Work
 
@@ -73,15 +78,20 @@ The remaining project work is primarily final submission and communication:
 
 - final documentation cleanup;
 - final repository audit;
+- deployment verification;
 - demo video;
 - final submission form;
-- optional career/portfolio packaging after the technical submission is complete.
+- final presentation or demonstration preparation.
+
+Optional career and portfolio packaging may be completed after the technical submission.
 
 ## Portfolio Enhancement
 
-Power BI was originally planned as an additional reporting layer but has been **descoped due to time constraints**.
+Power BI was originally planned as an additional reporting layer but has been **de-scoped from the mandatory final submission**.
 
-The Streamlit dashboard and FastAPI scoring service already cover the primary interactive delivery and scoring-service requirements.
+The Streamlit dashboard and FastAPI scoring service already provide the primary interactive planning and scoring capabilities required by the project.
+
+Power BI may be developed later as an optional portfolio enhancement and does not block project completion.
 
 ---
 
@@ -99,7 +109,7 @@ The Streamlit dashboard and FastAPI scoring service already cover the primary in
 
 All mandatory analytical and productization deliverables have been completed.
 
-The remaining work is final submission packaging and demonstration.
+The remaining work is final submission packaging, demonstration, and documentation verification.
 
 ---
 
@@ -149,6 +159,8 @@ The inventory snapshot dataset is simulated because the M5 source data does not 
 
 Therefore, inventory-based financial values, risk scores, and recommendations are analytical estimates rather than observed NorthBay Living business figures.
 
+The project must consistently disclose that the M5 dataset is a **public-data adaptation of the business problem**, not a direct extraction from an actual NorthBay Living operational system.
+
 ---
 
 # 6. Development Scope
@@ -169,64 +181,172 @@ The authoritative scope file is:
 
 This scope protection prevents KPI and model comparisons from being calculated over inconsistent populations.
 
+No expansion of the modelling population is planned for the mandatory final submission.
+
 ---
 
-# 7. Key Assumptions and Limitations
+# 7. Forecasting Design and Model Selection
 
-The project contains several important methodological limitations.
+## 7.1 Forecast Grain
 
-## 7.1 Simulated Inventory
+Forecasts are produced at the **weekly SKU-store level**.
 
-`inventory_snapshots_final.csv` contains simulated inventory positions rather than observed client inventory.
+Weekly aggregation provides a more stable planning grain than daily SKU demand while preserving product and store-level detail required for inventory decisions.
 
-The simulation produced:
+---
+
+## 7.2 Forecast Horizon
+
+The project uses an **eight-week forecast horizon**.
+
+The same horizon is used across:
+
+- baseline forecasting;
+- machine-learning forecasting;
+- model evaluation;
+- final production forecasting;
+- inventory-risk calculations.
+
+The eight-week horizon is therefore part of the locked production configuration.
+
+---
+
+## 7.3 Primary Forecast Metric
+
+The primary forecasting evaluation metric is **Weighted Absolute Percentage Error (WAPE)**.
+
+Forecast Bias is used as a secondary metric, with MAE and RMSE serving as supporting metrics where applicable.
+
+WAPE is used because it evaluates aggregate absolute forecast error relative to aggregate actual demand and is suitable for comparing performance across series with different sales volumes.
+
+---
+
+## 7.4 Validation Method
+
+Forecasting models are evaluated using **chronological rolling-origin validation**.
+
+Random train-test splitting is not used for the principal forecasting evaluation because it can introduce future information into model development and produce misleading estimates of forecasting performance.
+
+The final evaluation workflow preserves chronological order.
+
+---
+
+## 7.5 Final Holdout
+
+The latest **eight weeks** of available demand data are protected as an untouched final-test period.
+
+This final holdout is not used for:
+
+- feature design;
+- model tuning;
+- model selection;
+- production configuration decisions.
+
+The final-test period is used to provide the final evidence for production model selection.
+
+---
+
+## 7.6 Baseline
+
+A transparent statistical baseline is mandatory for model comparison.
+
+The final production baseline is a **damped-trend exponential-smoothing model** selected through the completed baseline workflow.
+
+The baseline is documented in:
+
+`data/processed/baseline_outputs/04_champion_baseline_config.json`
+
+The baseline remains the authoritative production forecasting method for the current submission.
+
+---
+
+## 7.7 Machine-Learning Forecasting
+
+LightGBM is used as the primary machine-learning forecasting approach.
+
+XGBoost was considered as a secondary machine-learning approach during modelling design.
+
+The machine-learning workflow uses forecasting features such as:
+
+- lag variables;
+- rolling statistics;
+- calendar information;
+- pricing information;
+- promotional/event information;
+- categorical SKU and store information.
+
+The machine-learning model is evaluated against the established baseline under the same forecasting and evaluation framework.
+
+The ML model is not automatically promoted to production.
+
+---
+
+## 7.8 Final Model Selection
+
+The final production model is selected using objective evaluation evidence and predefined selection guardrails.
+
+On the untouched eight-week final-test period:
+
+| Model | Final-Test WAPE |
+|---|---:|
+| **Damped-Trend Exponential Smoothing Baseline** | **53.17%** |
+| **LightGBM** | **59.34%** |
+
+The machine-learning model therefore did **not** outperform the production baseline.
+
+The baseline achieved lower WAPE and remained the selected production forecasting approach.
+
+This result is intentionally retained as part of the project evidence rather than being hidden or replaced with an unsupported model-selection claim.
+
+The final production forecasting configuration is locked in:
+
+`data/processed/production_outputs/06_production_forecast_config.json`
+
+---
+
+# 8. Inventory Intelligence and Risk Scoring
+
+Inventory risk is calculated using transparent business rules rather than an unexplained black-box classification model.
+
+The scoring framework combines forecast and inventory-planning indicators such as:
+
+- forecast demand;
+- inventory position;
+- demand coverage;
+- lead-time-related planning information;
+- safety-stock-related planning information;
+- forecast confidence and related indicators.
+
+The methodology is designed so that each risk classification and recommended action can be traced to documented logic and assumptions.
+
+The inventory outputs include:
+
+- stockout-risk assessment;
+- overstock-risk assessment;
+- replenishment recommendations;
+- markdown recommendations;
+- inventory exposure indicators.
+
+Because inventory and financial inputs are simulated or estimated where observed client data was unavailable, the resulting risk scores and financial exposure values are **illustrative analytical estimates** rather than observed NorthBay Living outcomes.
+
+---
+
+# 9. Inventory Snapshot Results
+
+The current simulated inventory-risk workflow produced:
 
 - **0 Reorder Now cases**
 - **19 Markdown/Clear cases**
 - **281 Healthy cases**
 - **0 Watch/Volatile cases**
 
-Therefore, the absence of stockout recommendations should not be interpreted as proof that NorthBay Living has no stockout problem.
+These results demonstrate the scoring framework but must not be interpreted as evidence that an actual NorthBay Living inventory system contains no stockout risk.
+
+The authoritative inventory outputs are generated within the project's processed inventory outputs.
 
 ---
 
-## 7.2 Estimated Financial Values
-
-Unit cost, list price, inventory value, revenue exposure, and related financial calculations are estimated analytical values.
-
-They are included to demonstrate the methodology and decision framework.
-
-They must not be presented as observed NorthBay Living financial figures.
-
----
-
-## 7.3 M5 Adaptation
-
-The project uses public M5 data adapted to the engagement brief.
-
-The resulting datasets and business terminology are therefore a project-specific analytical adaptation rather than a direct extraction from an actual NorthBay Living operational system.
-
----
-
-## 7.4 Development Scope
-
-The modelling workflow is intentionally restricted to the defined 300-series development scope.
-
-Results should therefore be interpreted as evidence from the project development population rather than a claim about an entire unseen retailer catalogue.
-
----
-
-## 7.5 Forecasting Performance
-
-The machine-learning model did not outperform the selected baseline on the untouched final-test period.
-
-This result is intentionally reported rather than hidden.
-
-The baseline was retained as the production forecasting approach.
-
----
-
-# 8. End-to-End Project Architecture
+# 10. End-to-End Project Architecture
 
 ```text
 Public M5 Source Data
@@ -260,6 +380,10 @@ Machine-Learning Forecasting
         ▼
 Notebook 06
 Model Evaluation & Selection
+        │
+        ├── Baseline vs ML evaluation
+        ├── Final-test evidence
+        └── Production forecast configuration
         │
         ▼
 Notebook 07
