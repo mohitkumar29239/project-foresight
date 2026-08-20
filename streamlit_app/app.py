@@ -185,7 +185,12 @@ elif page == "Forecast":
             x=series_df["week_start_date"], y=series_df["forecast_demand"],
             mode="lines+markers", name="Forecast", line=dict(color="#C0392B", dash="dash"),
         ))
-        fig.update_layout(title=f"Actual vs Forecast — {selected_series}", height=450)
+        fig.update_layout(
+    title=f"Actual vs Forecast — {selected_series}",
+    xaxis_title="Week",
+    yaxis_title="Units Sold",
+    height=450,
+)
         st.plotly_chart(fig, use_container_width=True)
 
         if not series_df.empty:
