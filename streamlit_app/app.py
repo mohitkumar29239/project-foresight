@@ -47,8 +47,7 @@ def load_data():
     so pages can show a clear empty state instead of crashing."""
     data = {}
 
-    st.write("DEBUG SKU EXISTS:", (PROJECT_ROOT / "data" / "processed" / "sku_master_final.csv").exists())
-
+   
     def try_read_csv(path, **kwargs):
         return pd.read_csv(path, **kwargs) if path.exists() else None
 
