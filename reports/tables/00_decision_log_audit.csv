@@ -1,0 +1,12 @@
+Check,Status,Details
+Decision log exists,Passed,C:\Users\hp\Project FORESIGHT\docs\decision_log.md
+Decision log is not empty,Passed,"23,765 bytes"
+Correct filename,Passed,decision_log.md
+Document version is 1.0,Passed,Expected version: 1.0
+Document status is Active,Passed,Expected status: Active
+Required sections are present,Passed,All required sections found
+DEC-001 through DEC-022 are present,Passed,All 22 decision identifiers found
+Exactly 22 decision headings exist,Passed,Decision headings found: 22
+Decision identifiers are unique,Passed,Unique identifiers found: 22
+Core project decisions are documented,Passed,All core decision topics found
+Markdown code fences are balanced,Passed,Code-fence markers found: 0

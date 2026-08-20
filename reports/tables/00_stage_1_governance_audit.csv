@@ -1,0 +1,15 @@
+Check,Status,Details
+Development scope document,Passed,C:\Users\hp\Project FORESIGHT\docs\development_scope.md
+Locked project roadmap,Passed,C:\Users\hp\Project FORESIGHT\docs\project_roadmap.md
+Decision log,Passed,C:\Users\hp\Project FORESIGHT\docs\decision_log.md
+Assumptions and limitations,Passed,C:\Users\hp\Project FORESIGHT\docs\assumptions_limitations.md
+Roadmap structural audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_project_roadmap_audit.csv
+Roadmap lock audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_project_roadmap_lock_audit.csv
+Decision log audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_decision_log_audit.csv
+Assumptions audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_assumptions_limitations_audit.csv
+Roadmap version 3.0 is Locked,Passed,Expected locked roadmap version: 3.0
+Stage 1 is marked Completed,Passed,Roadmap and governance stage
+All 22 decisions are documented,Passed,Expected decisions: DEC-001 through DEC-022
+Assumptions document is Active,Passed,Assumptions will continue to be updated
+M5 adaptation is disclosed,Passed,M5 source and simulated inventory disclosure
+Notebook 02 is registered,Passed,Notebook 02 must appear in the roadmap

@@ -1,0 +1,20 @@
+{
+  "production_model": "damped_trend_exponential_smoothing",
+  "production_model_source": "Notebook 04 (Baseline)",
+  "decision_rule_applied": {
+    "comparison_basis": "final_test_wape_only",
+    "minimum_credible_improvement_pp": 3.0,
+    "bias_guardrail": "ml_abs_bias_must_not_exceed_baseline_abs_bias",
+    "coverage_guardrail": "100_percent_series_and_horizon_coverage_required",
+    "default_outcome_if_any_condition_fails": "retain_baseline"
+  },
+  "baseline_final_test_wape": 53.17,
+  "ml_final_test_wape": 59.34,
+  "wape_improvement_pp": -6.16,
+  "ml_selected": false,
+  "final_test_start": "2016-02-27",
+  "final_test_end": "2016-04-16",
+  "forecast_horizon_weeks": 8,
+  "series_coverage": 300,
+  "configuration_status": "LOCKED"
+}

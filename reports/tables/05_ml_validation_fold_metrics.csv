@@ -1,0 +1,13 @@
+candidate,fold,WAPE (%)
+lightgbm_default,Fold 1 Validation,48.03553986261498
+lightgbm_default,Fold 2 Validation,48.187402871532456
+lightgbm_default,Fold 3 Validation,55.717947378879614
+lightgbm_regularized,Fold 1 Validation,48.34267012589258
+lightgbm_regularized,Fold 2 Validation,48.58883493123439
+lightgbm_regularized,Fold 3 Validation,56.53308021693846
+random_forest,Fold 1 Validation,49.05964142839218
+random_forest,Fold 2 Validation,48.17763917943168
+random_forest,Fold 3 Validation,55.620593660060976
+ridge_regression,Fold 1 Validation,52.43803573611912
+ridge_regression,Fold 2 Validation,51.02433704843079
+ridge_regression,Fold 3 Validation,64.96995819249575

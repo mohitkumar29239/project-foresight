@@ -1,0 +1,20 @@
+sku_id,quadrant,recommended_action,stockout_risk_score,overstock_risk_score,estimated_value_at_stake
+FOODS_1_004_CA_1,Markdown / Clear,Promote or discount to free up capital.,0.0,0.9502168544719922,381.42654755360246
+FOODS_1_004_WI_3,Markdown / Clear,Promote or discount to free up capital.,0.0,0.9810502727372397,283.5922023401539
+FOODS_1_004_WI_1,Markdown / Clear,Promote or discount to free up capital.,0.0,0.9369367439227502,272.12390790492356
+FOODS_1_004_CA_3,Markdown / Clear,Promote or discount to free up capital.,0.0,0.7922300206126135,249.63167949503455
+FOODS_1_004_TX_2,Markdown / Clear,Promote or discount to free up capital.,0.0,0.9781550571498822,210.39137124236817
+FOODS_1_004_CA_2,Markdown / Clear,Promote or discount to free up capital.,0.0,0.956792943869153,137.63466497557766
+HOBBIES_1_004_TX_1,Markdown / Clear,Promote or discount to free up capital.,0.0,0.7467207745981599,128.62265342453304
+FOODS_1_004_TX_1,Markdown / Clear,Promote or discount to free up capital.,0.0,0.6602858010856526,103.12343641355723
+HOUSEHOLD_1_001_CA_3,Markdown / Clear,Promote or discount to free up capital.,0.0,0.7359773669215693,61.05668235981339
+FOODS_1_004_CA_4,Markdown / Clear,Promote or discount to free up capital.,0.0,0.7381897680399058,34.38487939529881
+FOODS_1_003_WI_2,Markdown / Clear,Promote or discount to free up capital.,0.0,0.9997958879537787,29.374003188082018
+HOBBIES_1_008_TX_1,Markdown / Clear,Promote or discount to free up capital.,0.0,0.8477862225913274,25.221640122091987
+FOODS_1_002_CA_3,Markdown / Clear,Promote or discount to free up capital.,0.0,0.85401116924884,22.68253665524919
+HOBBIES_1_009_CA_1,Markdown / Clear,Promote or discount to free up capital.,0.0,0.8830065907365825,21.898563450267243
+FOODS_1_010_CA_4,Markdown / Clear,Promote or discount to free up capital.,0.0,0.998580796168607,17.015816766713062
+FOODS_1_009_TX_2,Markdown / Clear,Promote or discount to free up capital.,0.0,0.7490643582721874,14.082409935517124
+HOUSEHOLD_1_010_TX_3,Markdown / Clear,Promote or discount to free up capital.,0.0,0.8410764906147012,9.335949045823185
+HOUSEHOLD_1_010_WI_3,Markdown / Clear,Promote or discount to free up capital.,0.0,0.9754196201626759,6.496294670283422
+HOBBIES_1_010_CA_2,Markdown / Clear,Promote or discount to free up capital.,0.0,0.6905186768613403,4.598854387896527

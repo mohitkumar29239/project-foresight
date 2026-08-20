@@ -1,0 +1,45 @@
+column_position,column_name,role,feature_group,data_type,is_model_feature,is_categorical_feature,availability_rule
+1,sku_id,Identifier,Observation structure,str,False,False,Observation identity or ordering; excluded from predictors
+2,wm_yr_wk,Identifier,Observation structure,int64,False,False,Observation identity or ordering; excluded from predictors
+3,week_start_date,Identifier,Observation structure,datetime64[us],False,False,Observation identity or ordering; excluded from predictors
+4,week_end_date,Identifier,Observation structure,datetime64[us],False,False,Observation identity or ordering; excluded from predictors
+5,weekly_units_sold,Target,Forecasting outcome,int64,False,False,Observed weekly outcome; excluded from predictors
+6,time_index,Predictor,Calendar features,int16,True,False,Target-week timing known in advance
+7,calendar_month,Predictor,Calendar features,int8,True,False,Target-week timing known in advance
+8,week_of_year,Predictor,Calendar features,int8,True,False,Target-week timing known in advance
+9,week_of_year_sin,Predictor,Calendar features,float32,True,False,Target-week timing known in advance
+10,week_of_year_cos,Predictor,Calendar features,float32,True,False,Target-week timing known in advance
+11,demand_lag_1,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+12,demand_lag_2,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+13,demand_lag_4,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+14,demand_lag_8,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+15,demand_lag_13,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+16,demand_lag_26,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+17,demand_lag_52,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+18,demand_rolling_mean_4,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+19,demand_rolling_mean_8,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+20,demand_rolling_mean_13,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+21,demand_rolling_mean_26,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+22,demand_rolling_mean_52,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+23,demand_rolling_std_4,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+24,demand_rolling_std_13,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+25,demand_rolling_std_52,Predictor,Historical demand features,float32,True,False,Preceding demand observations only
+26,price_lag_8,Predictor,Historical commercial features,float32,True,False,At least eight weeks behind the target
+27,price_change_lag_8,Predictor,Historical commercial features,float32,True,False,At least eight weeks behind the target
+28,price_rolling_mean_4_lag_8,Predictor,Historical commercial features,float32,True,False,At least eight weeks behind the target
+29,promo_lag_8,Predictor,Historical commercial features,float32,True,False,At least eight weeks behind the target
+30,promo_rolling_rate_4_lag_8,Predictor,Historical commercial features,float32,True,False,At least eight weeks behind the target
+31,event_days,Predictor,Known calendar drivers,int64,True,False,Target-week schedules known in advance
+32,cultural_event_flag,Predictor,Known calendar drivers,int8,True,False,Target-week schedules known in advance
+33,national_event_flag,Predictor,Known calendar drivers,int8,True,False,Target-week schedules known in advance
+34,religious_event_flag,Predictor,Known calendar drivers,int8,True,False,Target-week schedules known in advance
+35,sporting_event_flag,Predictor,Known calendar drivers,int8,True,False,Target-week schedules known in advance
+36,snap_active_days,Predictor,Known calendar drivers,int8,True,False,Target-week schedules known in advance
+37,prior_active_week_count,Predictor,Demand-behaviour features,int16,True,False,Preceding demand activity only
+38,weeks_since_last_sale,Predictor,Demand-behaviour features,int16,True,False,Preceding demand activity only
+39,active_week_rate_13,Predictor,Demand-behaviour features,float32,True,False,Preceding demand activity only
+40,item_id,Predictor,Static hierarchy features,str,True,True,Static product and store metadata
+41,category,Predictor,Static hierarchy features,str,True,True,Static product and store metadata
+42,department,Predictor,Static hierarchy features,str,True,True,Static product and store metadata
+43,store_id,Predictor,Static hierarchy features,str,True,True,Static product and store metadata
+44,state_id,Predictor,Static hierarchy features,str,True,True,Static product and store metadata

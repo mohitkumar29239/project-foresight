@@ -1,0 +1,8 @@
+Metric,Result
+WAPE,53.17%
+Forecast Bias,10.94%
+MAE,3.2138
+RMSE,5.9251
+Forecast Coverage,100.00%
+Total Actual Demand,"14,506.00"
+Total Predicted Demand,"16,093.14"

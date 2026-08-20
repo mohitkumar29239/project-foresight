@@ -1,0 +1,25 @@
+KPI Group,KPI,Value,Unit,Business Meaning
+Historical Coverage,Analysis Start Date,2011-01-29,Date,Beginning of the historical analysis period
+Historical Coverage,Analysis End Date,2016-04-24,Date,Latest date included in the analysis
+Historical Coverage,Historical Days,1913,Days,Unique daily periods available for analysis
+Historical Coverage,Observed Calendar Weeks,274,Weeks,Weekly periods represented in the dataset
+Historical Coverage,Observed Calendar Months,64,Months,Monthly periods represented in the dataset
+Historical Coverage,Observed Calendar Years,6,Years,Calendar years represented in the dataset
+Commercial Performance,Total Units Sold,573932,Units,Total historical customer demand
+Commercial Performance,Total Revenue,1720316.59,Currency Units,Total historical sales value
+Commercial Performance,Average Daily Demand,300.02,Units per Day,Average demand across each observed day
+Commercial Performance,Average Weekly Demand,2094.64,Units per Week,Average demand across each observed retail week
+Commercial Performance,Weighted Average Selling Price,3.0,Currency Units per Unit,Average realised selling price weighted by units sold
+Commercial Performance,Estimated Gross Margin Value,542429.18,Currency Units,Assumption-based estimated commercial margin
+Business Coverage,SKU-Store Series,300,Series,Approved product-store combinations under analysis
+Business Coverage,Unique Products,30,Products,Distinct products represented in the scope
+Business Coverage,Categories,3,Categories,Product categories represented in the scope
+Business Coverage,Departments,3,Departments,Product departments represented in the scope
+Business Coverage,Stores,10,Stores,Retail stores represented in the scope
+Business Coverage,States,3,States,Geographic states represented in the scope
+Simulated Inventory,Average Inventory on Hand,19.0,Units per SKU-Store-Date,Average simulated closing stock across historical records
+Simulated Inventory,Average Inventory on Order,4.81,Units per SKU-Store-Date,Average simulated units awaiting receipt
+Simulated Inventory,Latest Estimated Inventory Value,14170.55,Currency Units,Estimated inventory value at the latest snapshot
+Simulated Inventory,Low-Stock Observations,67528,Historical Records,Historical records classified as Low Stock
+Simulated Inventory,Excess-Stock Observations,223381,Historical Records,Historical records classified as Overstock
+Simulated Inventory,Stockout Observations,15318,Historical Records,Historical records classified as Stockout

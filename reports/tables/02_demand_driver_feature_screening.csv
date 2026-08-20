@@ -1,0 +1,5 @@
+Feature,Data Coverage,Observed Evidence,Screening Decision,Recommended Treatment,Important Limitation
+Selling Price,85.74% valid-price records,Median within-SKU-store correlation: -0.02,Suitable with caution,Use at product or SKU-store level; consider price changes and relative price.,Relationship is weak and inconsistent; zero-price rows are unavailable-price observations.
+Promotion Flag,0.37% active records,17.34% demand difference,Suitable with caution,Retain as a binary feature and validate by product or category.,Promotion observations are very sparse and revenue moved in the opposite direction.
+Calendar Event Flag,8.05% active records,-4.81% demand difference,Suitable for forecasting tests,Retain the event flag and later test event-name or event-type features.,"Different events may have opposite effects, which a single flag can hide."
+State-Specific SNAP Flag,49.40% active records,4.94% demand difference,Suitable for forecasting tests,Use as a state-aware binary feature and test interactions with category and events.,"Observed differences may also reflect state, calendar, or product-mix effects."

@@ -1,0 +1,22 @@
+Validation Area,Metric,Result,Requirement,Status
+Dataset Scope,Eligible modelling observations,"66,300","66,300",PASS
+Dataset Scope,Dataset columns,44,44,PASS
+Dataset Scope,SKU-store series,300,300,PASS
+Feature Registration,Approved model predictors,39,39,PASS
+Feature Registration,Categorical predictors,5,5,PASS
+Feature Registration,Feature-availability groups,6,6,PASS
+Feature Metadata,Feature-dictionary rows,44,44,PASS
+Dataset Integrity,Column order,Valid,Valid,PASS
+Dataset Integrity,Duplicated SKU-week keys,0,0,PASS
+Dataset Integrity,Chronological ordering,Valid,Valid,PASS
+Dataset Integrity,Missing identifier values,0,0,PASS
+Dataset Integrity,Missing target values,0,0,PASS
+Dataset Integrity,Missing predictor values,0,0,PASS
+Dataset Integrity,Negative target values,0,0,PASS
+Dataset Integrity,Non-finite numerical values,0,0,PASS
+Persistence,CSV round-trip values,Match,Match,PASS
+Feature Metadata,Missing dictionary values,0,0,PASS
+Feature Metadata,Non-numeric numerical predictors,0,0,PASS
+Leakage Control,Prohibited predictors,0,0,PASS
+Leakage Control,Unsafe future or lead names,0,0,PASS
+Final Handoff,Forecasting handoff,Ready,Ready,PASS

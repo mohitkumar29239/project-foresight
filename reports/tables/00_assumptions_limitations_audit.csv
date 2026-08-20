@@ -1,0 +1,10 @@
+Check,Status,Details
+Assumptions file exists,Passed,C:\Users\hp\Project FORESIGHT\docs\assumptions_limitations.md
+Assumptions file is not empty,Passed,"11,804 bytes"
+Correct filename,Passed,assumptions_limitations.md
+Correct document title,Passed,Expected main title found
+Document version is 1.0,Passed,Expected version: 1.0
+Document status is Active,Passed,Expected status: Active
+Sections 1 through 12 are present,Passed,All required sections found
+Core assumptions and disclosures are present,Passed,All core disclosures found
+Markdown code fences are balanced,Passed,Code-fence markers found: 0

@@ -1,0 +1,15 @@
+Validation Control,Status
+Champion configuration remains locked,PASS
+Final-test forecasts remain locked,PASS
+Scored dataset remains locked,PASS
+Expected evaluation records retained,PASS
+Unique series-week scoring key,PASS
+All approved series retained,PASS
+All eight horizons retained,PASS
+Locked test boundary retained,PASS
+Forecast origin precedes test period,PASS
+Actual-demand totals reconcile,PASS
+Predicted-demand totals reconcile,PASS
+Stored WAPE reconciles,PASS
+Stored Forecast Bias reconciles,PASS
+Complete forecast coverage retained,PASS

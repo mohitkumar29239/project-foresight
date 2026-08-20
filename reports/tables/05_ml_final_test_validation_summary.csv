@@ -1,0 +1,3 @@
+Metric,Validation (%),Final Test (%),Change (pp),Assessment
+WAPE,50.67158532507988,59.34,8.67,Degraded
+Absolute Bias,5.0349685940424,11.03,6.0,Degraded

@@ -1,0 +1,15 @@
+{
+  "champion_model": "lightgbm_default",
+  "family": "Gradient boosting",
+  "validation_wape": 50.67158532507988,
+  "validation_bias": 5.0349685940424,
+  "improvement_vs_baseline_validation_pct": -1.3026495903236273,
+  "training_end": "2016-02-20",
+  "final_test_start": "2016-02-27",
+  "final_test_end": "2016-04-16",
+  "forecast_horizon_weeks": 8,
+  "series_coverage": 300,
+  "configuration_status": "LOCKED",
+  "final_test_wape": 59.34,
+  "final_test_bias": 11.03
+}

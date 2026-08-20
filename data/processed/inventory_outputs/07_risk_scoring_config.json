@@ -1,0 +1,9 @@
+{
+  "forward_window_weeks": 8,
+  "stockout_risk_high_threshold": 0.5,
+  "overstock_risk_high_threshold": 0.5,
+  "days_per_week": 7,
+  "series_scored": 300,
+  "series_flagged": 19,
+  "configuration_status": "LOCKED"
+}
