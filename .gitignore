@@ -34,7 +34,6 @@ data/interim/*
 # ------------------------------------------------------------
 data/processed/sales_daily_final.csv
 data/processed/calendar_final.csv
-data/processed/sku_master_final.csv
 data/processed/inventory_snapshots_final.csv
 data/dashboard/*
 
