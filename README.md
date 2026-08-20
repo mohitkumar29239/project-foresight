@@ -90,7 +90,6 @@ pricing/promotion review, not a random spread across the catalogue.
 
 ```
 Project FORESIGHT/
-│
 ├── notebooks/
 │   ├── 00_Phase_0_Setup.ipynb
 │   ├── 01_Data_Engineering_Validation.ipynb
@@ -102,28 +101,32 @@ Project FORESIGHT/
 │   └── 07_Inventory_Intelligence.ipynb
 │
 ├── data/
-│   ├── raw/                 source extracts (excluded from version control)
-│   ├── interim/             intermediate analytical datasets (excluded from version control)
-│   ├── modeling/            feature-engineered modelling datasets
+│   ├── raw/                     source extracts (local only; excluded from Git)
+│   ├── interim/                 intermediate datasets (local only; excluded from Git)
+│   ├── modeling/
+│   │   ├── categorical_features.json
+│   │   ├── feature_dictionary.csv
+│   │   ├── model_feature_list.json
+│   │   └── weekly_features_final.csv
+│   │
 │   └── processed/
-│       ├── calendar_final.csv
-│       ├── sales_daily_final.csv
-│       ├── sku_master_final.csv
 │       ├── development_sku_scope.csv
+│       ├── sku_master_final.csv
 │       ├── baseline_outputs/
 │       ├── ml_outputs/
 │       ├── inventory_outputs/
 │       └── production_outputs/
 │
 ├── reports/
-│   ├── figures/              analysis and diagnostic charts
-│   ├── tables/               reporting and audit tables
-│   ├── notebook_exports/     PDF exports of key notebooks
-│   └── executive_report/     EDA Insight Memo
+│   ├── figures/                 analysis and diagnostic charts
+│   ├── tables/                  reporting and audit tables
+│   ├── notebook_exports/        PDF exports of key notebooks
+│   └── executive_report/        EDA Insight Memo
 │
 ├── docs/
 │   ├── project_roadmap.md
 │   ├── decision_log.md
+│   ├── development_scope.md
 │   └── assumptions_limitations.md
 │
 ├── streamlit_app/
@@ -141,13 +144,17 @@ Project FORESIGHT/
 └── .gitignore
 ```
 
-> **Note on data files:** Raw source data and intermediate analytical datasets are excluded
-> from version control. Large generated datasets such as `sales_daily_final.csv`,
-> `calendar_final.csv`, and `inventory_snapshots_final.csv` are also excluded because
-> they are regenerable from the project pipeline. The smaller
-> `development_sku_scope.csv` file is retained as the authoritative definition of the
-> 300-series development population. Modelling feature files and project metadata required
-> to understand the forecasting workflow are retained in `data/modeling/`.
+> **Note on data files:** `data/raw/` contains the original source extracts and is excluded
+> from version control. `data/interim/` contains intermediate analytical datasets and is
+> also excluded. Large generated datasets such as `sales_daily_final.csv`,
+> `calendar_final.csv`, and `inventory_snapshots_final.csv` are excluded because they can
+> be regenerated from the project pipeline. The smaller `development_sku_scope.csv` file
+> is retained as the authoritative definition of the 300-series development population.
+> `sku_master_final.csv` and the committed files under `data/processed/*_outputs/` are
+> retained because they are required by the dashboard, API, evaluation, and final project
+> outputs. The files under `data/modeling/` contain the feature-engineered modelling data
+> and supporting feature metadata required to document the forecasting workflow.
+> Jupyter checkpoint and temporary/cache files are excluded from version control.
 
 ## Setup and Run Instructions
 
