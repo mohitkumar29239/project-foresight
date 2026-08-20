@@ -90,28 +90,64 @@ pricing/promotion review, not a random spread across the catalogue.
 
 ```
 Project FORESIGHT/
-├── notebooks/              00-07: the full pipeline, in run order
+│
+├── notebooks/
+│   ├── 00_Phase_0_Setup.ipynb
+│   ├── 01_Data_Engineering_Validation.ipynb
+│   ├── 02_Exploratory_Data_Analysis.ipynb
+│   ├── 03_Feature_Engineering.ipynb
+│   ├── 04_Baseline_Forecasting.ipynb
+│   ├── 05_Machine_Learning_Forecasting.ipynb
+│   ├── 06_Model_Evaluation.ipynb
+│   └── 07_Inventory_Intelligence.ipynb
+│
 ├── data/
-│   ├── raw/                 source extracts (not in version control - see below)
-│   ├── processed/           cleaned datasets + model/production/inventory outputs
-│   └── modeling/            feature-engineered weekly dataset (not in version control)
+│   ├── raw/                 source extracts (excluded from version control)
+│   ├── interim/             intermediate analytical datasets (excluded from version control)
+│   ├── modeling/            feature-engineered modelling datasets
+│   └── processed/
+│       ├── calendar_final.csv
+│       ├── sales_daily_final.csv
+│       ├── sku_master_final.csv
+│       ├── development_sku_scope.csv
+│       ├── baseline_outputs/
+│       ├── ml_outputs/
+│       ├── inventory_outputs/
+│       └── production_outputs/
+│
 ├── reports/
-│   ├── figures/              all analysis and diagnostic charts, prefixed by notebook
-│   ├── tables/                all reporting tables, prefixed by notebook
-│   ├── notebook_exports/      PDF exports of key notebooks
-│   └── executive_report/      EDA Insight Memo
-├── docs/                     decision log, assumptions/limitations, project roadmap
-├── streamlit_app/app.py      planning dashboard
-├── api/main.py                scoring service (FastAPI)
-├── presentation/               executive readout deck
+│   ├── figures/              analysis and diagnostic charts
+│   ├── tables/               reporting and audit tables
+│   ├── notebook_exports/     PDF exports of key notebooks
+│   └── executive_report/     EDA Insight Memo
+│
+├── docs/
+│   ├── project_roadmap.md
+│   ├── decision_log.md
+│   └── assumptions_limitations.md
+│
+├── streamlit_app/
+│   └── app.py
+│
+├── api/
+│   └── main.py
+│
+├── presentation/
+│   └── Executive_Readout.pptx
+│
 ├── run_data_pipeline.py
-└── requirements.txt
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
-> **Note on data files:** `data/raw/`, `data/interim/`, `data/modeling/`, and the largest
-> processed files (`sales_daily_final.csv`, `inventory_snapshots_final.csv`) are excluded
-> from version control (see `.gitignore`) since they are large and fully regenerable from
-> Notebook 01 onward. Everything the dashboard and API need to run is included.
+> **Note on data files:** Raw source data and intermediate analytical datasets are excluded
+> from version control. Large generated datasets such as `sales_daily_final.csv`,
+> `calendar_final.csv`, and `inventory_snapshots_final.csv` are also excluded because
+> they are regenerable from the project pipeline. The smaller
+> `development_sku_scope.csv` file is retained as the authoritative definition of the
+> 300-series development population. Modelling feature files and project metadata required
+> to understand the forecasting workflow are retained in `data/modeling/`.
 
 ## Setup and Run Instructions
 
@@ -152,8 +188,8 @@ Visit `http://127.0.0.1:8000/docs` for interactive API documentation.
 - [x] Notebook 03 — Feature Engineering
 - [x] Notebook 04 — Baseline Forecasting
 - [x] Notebook 05 — Machine-Learning Forecasting
-- [x] Notebook 06 — Model Evaluation & Selection
-- [x] Notebook 07 — Inventory Intelligence & Risk Scoring
+- [x] Notebook 06 — Model Evaluation 
+- [x] Notebook 07 — Inventory Intelligence
 - [x] Streamlit Planning Dashboard — deployed
 - [x] FastAPI Scoring Service — deployed
 - [x] Executive Readout Deck

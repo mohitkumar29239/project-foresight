@@ -130,19 +130,15 @@ They are not actual confirmed supplier orders.
 
 Lead times are simulated or estimated because supplier-level lead-time records are unavailable.
 
-The selected lead-time values must be documented before final risk scoring.
+The final inventory-risk analysis uses the documented lead-time assumptions implemented in Notebook 07.
+
+These values represent analytical planning assumptions and do not represent observed supplier lead times.
 
 ### 4.4 Reorder Point and Safety Stock
 
-Reorder points and safety-stock quantities will be calculated using documented business rules.
+Reorder points and safety-stock quantities are calculated using the documented business rules implemented in Notebook 07.
 
-These rules may use:
-
-- expected demand;
-- demand variability;
-- lead time;
-- service-level assumptions;
-- forecast confidence.
+These rules use the available forecast and simulated inventory information together with assumption-based planning parameters.
 
 They do not represent an existing retailer replenishment policy.
 
@@ -306,11 +302,13 @@ Machine-learning models are not assumed to be better automatically.
 
 The seasonal-naive baseline may remain the preferred method when advanced models do not produce a reliable improvement.
 
-### 8.8 Forecast Uncertainty
+### 8.8 Final Model Selection Result
 
-Point forecasts are estimates, not guarantees.
+The final untouched holdout evaluation did not demonstrate that the selected machine-learning forecasting approach consistently outperformed the seasonal-naive baseline.
 
-Forecast confidence or uncertainty must be considered when creating inventory recommendations.
+The baseline was therefore retained as the production forecasting approach.
+
+This result is reported as an analytical finding and is not treated as a project failure.
 
 ---
 
@@ -337,7 +335,21 @@ The project will not implement:
 - complete inventory optimisation;
 - guaranteed service-level optimisation.
 
+### 9.1 Observed Project Risk Distribution
+
+Under the simulated inventory assumptions and final development scope, the implemented risk-scoring workflow produced:
+
+- 0 Reorder Now cases;
+- 0 Watch/Volatile cases;
+- 19 Markdown/Clear cases;
+- 281 Healthy cases.
+
+These results describe the simulated project environment only.
+
+They must not be interpreted as evidence that the actual NorthBay Living business has no stockout or replenishment risk.
+
 ---
+
 
 ## 10. Dashboard and API Limitations
 

@@ -35,7 +35,6 @@ data/interim/*
 data/processed/sales_daily_final.csv
 data/processed/calendar_final.csv
 data/processed/inventory_snapshots_final.csv
-data/dashboard/*
 
 # Keep the small official development-scope file
 !data/processed/development_sku_scope.csv

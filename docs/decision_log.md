@@ -303,19 +303,19 @@ Every major decision should include:
 
 ---
 
-### DEC-016 — Treat Power BI as a Portfolio Enhancement
+### DEC-016 — De-scope Power BI from the Mandatory Submission
 
 | Field | Details |
 |---|---|
-| **Date** | 2 August 2026 |
+| **Date** | 21 August 2026 |
 | **Stage** | Business Intelligence |
-| **Status** | Approved |
-| **Decision** | Create a consulting-style Power BI report only after the mandatory forecasting, risk-scoring, Streamlit, and scoring-service deliverables are stable. |
-| **Reason** | Power BI strengthens the portfolio and executive storytelling, but it is not a substitute for the mandatory analytical and deployment deliverables. |
-| **Alternatives Considered** | Build Power BI before modelling; replace Streamlit with Power BI; exclude Power BI completely. |
-| **Expected Impact** | Power BI work must not delay the core Zidio submission. It will use validated dashboard-ready datasets produced after risk scoring. |
+| **Status** | Revised |
+| **Decision** | Power BI is removed from the mandatory Project FORESIGHT submission scope and retained only as an optional future portfolio enhancement. |
+| **Reason** | The mandatory analytical, forecasting, inventory-intelligence, dashboard, API, deployment, documentation, and executive communication requirements are already substantially complete. Continuing Power BI development at this stage could delay final submission without materially improving the core deliverables. |
+| **Alternatives Considered** | Complete Power BI before submission; replace Streamlit with Power BI; maintain Power BI as a mandatory deliverable; postpone Power BI until after submission. |
+| **Expected Impact** | Streamlit remains the primary stakeholder-facing planning application. Power BI will not block project completion and may be developed later as a separate portfolio enhancement. |
 | **Responsible** | Mohit Kumar |
-| **Related Files** | `dashboard/`, `data/dashboard/` |
+| **Related Files** | `docs/project_roadmap.md`, `docs/decision_log.md` |
 
 ---
 
@@ -367,19 +367,19 @@ Every major decision should include:
 
 ---
 
-### DEC-020 — Prepare Separate Dashboard-Ready Datasets
+### DEC-020 — Retire Unused Dashboard-Ready Dataset Directory
 
 | Field | Details |
 |---|---|
-| **Date** | 2 August 2026 |
+| **Date** | 21 August 2026 |
 | **Stage** | Dashboard Data Preparation |
-| **Status** | Approved |
-| **Decision** | Create compact and validated dashboard-specific tables instead of loading full analytical and modelling datasets directly into stakeholder applications. |
-| **Reason** | Smaller purpose-built tables improve application speed, simplify KPI calculations, reduce memory use, and make dashboard validation easier. |
-| **Alternatives Considered** | Load the full daily analytical dataset into every application; calculate all dashboard metrics dynamically; create unrelated datasets separately for Streamlit and Power BI. |
-| **Expected Impact** | Streamlit and Power BI will use consistent files from `data/dashboard/`, and their displayed KPIs must reconcile with notebook outputs. |
+| **Status** | Retired |
+| **Decision** | Retire the planned `data/dashboard/` dataset layer because the directory was empty and was not required by the final Streamlit or FastAPI implementation. |
+| **Reason** | The final applications do not depend on a dedicated `data/dashboard/` directory. Maintaining an unused directory and documenting it as an active project dependency would create unnecessary repository complexity and could cause confusion during review. |
+| **Alternatives Considered** | Keep the empty directory; populate it with duplicate dashboard datasets; continue using the planned dashboard-data architecture. |
+| **Expected Impact** | `data/dashboard/` is not part of the final mandatory project architecture. Streamlit and FastAPI will continue to use their actual validated project outputs and data sources. |
 | **Responsible** | Mohit Kumar |
-| **Related Files** | `data/dashboard/`, `streamlit_app/`, `dashboard/` |
+| **Related Files** | `docs/project_roadmap.md`, `docs/decision_log.md`, `streamlit_app/`, `api/` |
 
 ---
 
@@ -389,7 +389,7 @@ Every major decision should include:
 |---|---|
 | **Date** | 2 August 2026 |
 | **Stage** | Deployment |
-| **Status** | Approved |
+| **Status** | Implemented |
 | **Decision** | Use Streamlit Community Cloud as the initial deployment target for the planning application and Render as the initial deployment target for the FastAPI service. |
 | **Reason** | These platforms support public portfolio deployment and are appropriate for the project’s Python-based application architecture. |
 | **Alternatives Considered** | Deploy both components through one platform; use Hugging Face Spaces; keep applications local only. |
@@ -399,38 +399,52 @@ Every major decision should include:
 
 ---
 
-### DEC-022 — Lock Master Roadmap Version 3.0
+### DEC-022 — Lock Master Roadmap Version 3.1
 
 | Field | Details |
 |---|---|
-| **Date** | 2 August 2026 |
+| **Date** | 21 August 2026 |
 | **Stage** | Roadmap and Governance |
-| **Status** | Implemented |
-| **Decision** | Formally lock Project FORESIGHT Master Roadmap version 3.0 after completing its structural and lock audits. |
-| **Reason** | Notebook 02 should begin only after the complete project architecture, dependencies, deliverables, outputs, priorities, and completion standards are documented and validated. |
-| **Alternatives Considered** | Start Notebook 02 before completing project planning; leave the roadmap in draft status; proceed without structural validation. |
-| **Expected Impact** | The project will now follow the documented stage sequence. Major architecture changes require a new decision-log entry and an approved roadmap revision. |
+| **Status** | Revised |
+| **Decision** | Update the locked Master Roadmap from version 3.0 to version 3.1 to reflect the completed analytical, productization, deployment, and submission state of the project. |
+| **Reason** | The project has progressed beyond the original roadmap state. The current roadmap must accurately distinguish completed mandatory deliverables from optional future enhancements. |
+| **Alternatives Considered** | Keep version 3.0 unchanged; create a completely new roadmap; continue modifying the roadmap without version control. |
+| **Expected Impact** | Roadmap version 3.1 becomes the authoritative current project roadmap. Future major architectural changes require a new decision-log entry. |
 | **Responsible** | Mohit Kumar |
-| **Related Files** | `docs/project_roadmap.md`, `reports/tables/project_roadmap_audit.csv`, `reports/tables/project_roadmap_lock_audit.csv` |
+| **Related Files** | `docs/project_roadmap.md`, `docs/decision_log.md` |
+
+---
+
+### DEC-023 — Freeze Core Technical Scope for Final Submission
+
+| Field | Details |
+|---|---|
+| **Date** | 21 August 2026 |
+| **Stage** | Final Submission |
+| **Status** | Implemented |
+| **Decision** | Freeze the core technical scope and prioritise validation, documentation, demonstration, and final submission over additional modelling or application features. |
+| **Reason** | The required forecasting, evaluation, inventory intelligence, dashboard, API, deployment, and executive communication components are complete. Additional feature development introduces scope risk without being necessary for the core submission. |
+| **Alternatives Considered** | Add additional forecasting models; build Power BI; add advanced explainability; redesign the dashboard; expand the modelling population. |
+| **Expected Impact** | Remaining project effort will focus on repository audit, documentation consistency, deployment verification, demo preparation, and final submission. |
+| **Responsible** | Mohit Kumar |
+| **Related Files** | `docs/project_roadmap.md`, `docs/development_scope.md`, `docs/assumptions_limitations.md` |
 
 ---
 
 ## 5. Future Decisions
 
-New decisions will be added below this section as the project progresses.
+New decisions will be added to this section only if a new material technical, analytical, product, deployment, or governance decision is required during the final submission phase.
 
-Expected future entries may include:
+At the current project stage, no major architectural or modelling decisions are planned.
 
-- final EDA analytical-grain decisions;
-- approved feature definitions;
-- exact rolling-validation folds;
-- model hyperparameter decisions;
-- champion-model selection;
-- forecast-confidence methodology;
-- stockout and overstock thresholds;
-- safety-stock assumptions;
-- deployment changes;
-- final business recommendation rules.
+Remaining decisions may relate to:
 
-No future result should be entered before it is supported by completed analysis or validation.
+- final documentation corrections;
+- deployment configuration changes, if required;
+- final submission requirements;
+- demonstration or presentation changes;
+- post-submission portfolio enhancements.
 
+Optional enhancements such as Power BI, additional forecasting models, expanded modelling scope, or advanced application features are not part of the mandatory final submission scope.
+
+No future decision should be entered unless it represents a genuine project decision and is supported by the relevant implementation, analysis, or validation.
