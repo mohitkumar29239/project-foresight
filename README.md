@@ -21,7 +21,8 @@ needing a data scientist in the room.
 | Deliverable | Link |
 |---|---|
 | Planning Dashboard (Streamlit) | https://project-foresight-bm7qjlc2xqqzf96oghyl6r.streamlit.app |
-| Scoring Service (FastAPI) | https://project-foresight-api-flsj.onrender.com/docs |
+| Scoring Service (FastAPI) | https://project-foresight-api-flsj.onrender.com |
+| API documentation | https://project-foresight-api-flsj.onrender.com/docs |
 
 > **Note:** the scoring service runs on Render's free tier, which sleeps after 15 minutes of
 > inactivity. The first request after a period of inactivity may take 30–50 seconds to
@@ -39,12 +40,14 @@ products are at risk of stocking out, and which are overstocked.
 
 ## Data
 
-Four datasets are used, adapted from the M5 Forecasting competition and mapped onto the
-brief's schema (sales, calendar, SKU master, inventory snapshots). The full data dictionary
-is in the engagement brief; the transformation logic is in Notebook 01.
+The project uses four core datasets, adapted from the M5 Forecasting competition and mapped
+onto the brief's schema: sales, calendar, SKU master, and inventory snapshots. The full data
+dictionary is defined by the engagement brief, while the transformation and validation logic
+is implemented in Notebook 01.
 
 A fixed, category-balanced **development scope of 300 SKU-store series** (30 products × 10
-stores) is used throughout the pipeline, documented in `data/processed/development_sku_scope.csv`.
+stores) is used throughout the pipeline, documented in
+`data/processed/development_sku_scope.csv`.
 
 ## Key Assumptions and Limitations
 
@@ -68,15 +71,11 @@ developed under identical rolling-origin validation, then compared once on an un
 final-test period.
 
 | Model | Validation WAPE | Final-Test WAPE | Final-Test Bias |
-|---|---|---|---|
-| Baseline — damped-trend exponential smoothing (Notebook 04) | 50.02% | **53.17%** | +10.94% |
-| ML — LightGBM (Notebook 05) | 50.67% | 59.34% | +11.03% |
+|---|---:|---:|---:|
+| Baseline — damped-trend exponential smoothing | 50.02% | **53.17%** | +10.94% |
+| ML — LightGBM | 50.67% | 59.34% | +11.03% |
 
-**Outcome: the baseline was retained as the production forecaster.** The ML model was fairly
-developed and validated under the same rules as the baseline, but did not clear the
-pre-declared improvement threshold on the untouched final test (Notebook 06). This is reported
-as-is, per the engagement's honesty requirement — a retained baseline is a valid, documented
-outcome, not a failure.
+**Outcome: the baseline was retained as the production forecaster.** The ML model was fairly developed and validated under the same rules as the baseline, but it did not outperform the baseline on the untouched final-test period. The baseline also achieved lower WAPE at every forecast horizon from 1 to 8 weeks. This is reported as-is, consistent with the engagement's requirement to beat the baseline honestly or ship the baseline and document why.
 
 ## Risk Scoring Result
 
