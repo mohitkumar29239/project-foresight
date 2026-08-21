@@ -7,9 +7,9 @@ Roadmap structural audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_
 Roadmap lock audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_project_roadmap_lock_audit.csv
 Decision log audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_decision_log_audit.csv
 Assumptions audit,Passed,C:\Users\hp\Project FORESIGHT\reports\tables\00_assumptions_limitations_audit.csv
-Roadmap version 3.0 is Locked,Passed,Expected locked roadmap version: 3.0
-Stage 1 is marked Completed,Passed,Roadmap and governance stage
-All 22 decisions are documented,Passed,Expected decisions: DEC-001 through DEC-022
+Roadmap version 3.1 is Locked,Passed,Detected version: 3.1; Detected status: Locked
+Governance and Scope Control section is present,Passed,Expected roadmap governance section
+All 24 decisions are documented,Passed,Expected decisions: DEC-001 through DEC-024
 Assumptions document is Active,Passed,Assumptions will continue to be updated
 M5 adaptation is disclosed,Passed,M5 source and simulated inventory disclosure
-Notebook 02 is registered,Passed,Notebook 02 must appear in the roadmap
+Notebook 02 is registered,Passed,Notebook 02 / Exploratory Data Analysis must appear in the roadmap

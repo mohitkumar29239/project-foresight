@@ -1,13 +1,14 @@
 Check,Status,Details
 Roadmap file exists,Passed,C:\Users\hp\Project FORESIGHT\docs\project_roadmap.md
-Roadmap file is not empty,Passed,"42,329 bytes"
+Roadmap file is not empty,Passed,"26,551 bytes"
 Correct roadmap filename,Passed,project_roadmap.md
-Sections 1 to 19 are present,Passed,All required sections found
+Sections 1 to 20 are present,Passed,All 20 required sections found
 All seven client deliverables are present,Passed,D1 through D7 found
-Locked forecasting decisions are present,Passed,All locked decisions found
+Final forecasting decisions are present,Passed,All final forecasting decisions found
 M5 adaptation and simulation disclosures are present,Passed,All disclosures found
-All 22 acceptance items are completed,Passed,Completed items found: 22
-No acceptance items remain pending,Passed,Pending items found: 0
-Roadmap version is 3.0,Passed,Expected version: 3.0
-Roadmap status is Locked,Passed,Expected current status: Locked
-Markdown code fences are balanced,Passed,Code-fence markers found: 2
+Core technical scope is frozen,Passed,Current final roadmap state
+Power BI is de-scoped,Passed,Current final roadmap state
+FastAPI service is deployed,Passed,Current final roadmap state
+Streamlit application is deployed,Passed,Current final roadmap state
+Roadmap version is 3.1,Passed,Detected version: 3.1
+Roadmap status is Locked,Passed,Detected status: Locked

@@ -1,6 +1,6 @@
 Check,Status,Details
 Assumptions file exists,Passed,C:\Users\hp\Project FORESIGHT\docs\assumptions_limitations.md
-Assumptions file is not empty,Passed,"11,804 bytes"
+Assumptions file is not empty,Passed,"12,865 bytes"
 Correct filename,Passed,assumptions_limitations.md
 Correct document title,Passed,Expected main title found
 Document version is 1.0,Passed,Expected version: 1.0
