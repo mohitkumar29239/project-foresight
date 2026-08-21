@@ -10,7 +10,7 @@
 | **Document Version** | 1.0 |
 | **Status** | Active |
 | **Created** | 2 August 2026 |
-| **Last Updated** | 2 August 2026 |
+| **Last Updated** | 21 August 2026 |
 
 ---
 
@@ -144,7 +144,7 @@ They do not represent an existing retailer replenishment policy.
 
 ### 4.5 Stockout and Overstock Labels
 
-Stockout and overstock classifications will be analytical risk indicators.
+Stockout and overstock classifications are analytical risk indicators.
 
 They must not be described as confirmed historical stockout or overstock events.
 
@@ -243,9 +243,9 @@ Business interpretations must remain consistent with the available evidence.
 
 ### 8.1 Forecast Grain
 
-Forecasting models will be evaluated using rolling-origin cross-validation so that chronological order is preserved and future information does not enter the training process.
+Forecasting models are evaluated using rolling-origin cross-validation so that chronological order is preserved and future information does not enter the training process.
 
-Forecasts will be produced at the weekly SKU-store level.
+Forecasts are produced at the weekly SKU-store level.
 
 Daily operational variation may therefore be smoothed during weekly aggregation.
 
@@ -300,15 +300,22 @@ Overall WAPE must therefore be supported by segment-level and SKU-level evaluati
 
 Machine-learning models are not assumed to be better automatically.
 
-The seasonal-naive baseline may remain the preferred method when advanced models do not produce a reliable improvement.
+The completed project compares the machine-learning forecasting approach against the validated statistical baseline using the same evaluation framework and final-test period.
+
+The final production baseline is the **damped-trend exponential-smoothing model**.
 
 ### 8.8 Final Model Selection Result
 
-The final untouched holdout evaluation did not demonstrate that the selected machine-learning forecasting approach consistently outperformed the seasonal-naive baseline.
+On the untouched eight-week final-test period:
 
-The baseline was therefore retained as the production forecasting approach.
+- Baseline WAPE: **53.17%**
+- LightGBM WAPE: **59.34%**
 
-This result is reported as an analytical finding and is not treated as a project failure.
+The machine-learning model therefore did not outperform the selected baseline.
+
+The baseline was retained as the production forecasting approach.
+
+This result is reported as an analytical finding and is not treated as a project failure. The project follows the principle of selecting the model based on validation evidence rather than model complexity.
 
 ---
 
